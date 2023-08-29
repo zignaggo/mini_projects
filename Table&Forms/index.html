@@ -9,24 +9,90 @@
 	<body>
 		<section class="container-table">
 			<div class="filters">
-				<select name="quantity" id="quantity_students">
-                    <option selected>05</option>
-                    <option>07</option>
-                    <option>12</option>
-                </select>
+				<select
+					name="quantity"
+					id="quantity_students"
+					class="component"
+				>
+					<option selected value="5">05</option>
+					<option value="7">07</option>
+					<option value="12">12</option>
+				</select>
+				<div class="filter component">
+					<img src="./assets/mdi_filter-variant.svg" />
+					<span>Filter</span>
+				</div>
 			</div>
-			<table>
+			<div class="wrapper-table">
+				<table>
 				<thead>
 					<tr>
 						<th><input type="checkbox" name="" id="" /></th>
-                        <th><span>Nome</span></th>
-                        <th><span>Nascimento</span></th>
-                        <th><span>Status</span></th>
-                        <th><span>Matrícula</span></th>
-                        <th><span>Turma</span></th>
+						<th>
+							<button>
+								<span>Nome</span>
+								<img src="./assets/ph_caret-up-down-fill.svg" />
+							</button>
+						</th>
+						<th>
+							<button>
+								<span>Nascimento</span>
+								<img src="./assets/ph_caret-up-down-fill.svg" />
+							</button>
+						</th>
+						<th>
+							<button>
+								<span>Status</span>
+								<img src="./assets/ph_caret-up-down-fill.svg" />
+							</button>
+						</th>
+						<th>
+							<button>
+								<span>Matrícula</span>
+								<img src="./assets/ph_caret-up-down-fill.svg" />
+							</button>
+						</th>
+						<th>
+							<button>
+								<span>Turma</span>
+								<img src="./assets/ph_caret-up-down-fill.svg" />
+							</button>
+						</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr>
+						<th><input type="checkbox" name="" id="" /></th>
+						<th>
+							<div class="perfil">
+								<img src="https://www.thispersondoesnotexist.com/" alt="">
+								<span>Darlene Robertson</span>
+							</div>
+						</th>
+						<th>
+							<div class="date">
+								29/08/2004
+							</div>
+						</th>
+						<th>
+							<div class="status">
+								Ativo
+							</div>
+						</th>
+						<th>
+							<div class="registration">
+								2023001700
+							</div>
+						</th>
+						<th>
+							<div class="class">
+								BSI1
+							</div>
+						</th>
+					</tr>
+				</tbody>
 			</table>
+			</div>
 		</section>
 	</body>
 </html>

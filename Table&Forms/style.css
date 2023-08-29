@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -12,27 +12,23 @@
 	--second: #f4f7f9;
 	--accent: #2a61ff;
 	--text-primary: #253a66;
-	--text-second: #5a6b8c;
+	--text-second: #8b96ae;
 }
 
 /* Select Input */
 select {
-	min-height: 35px;
-	border-radius: 8px;
-	padding: 8px;
-    border: 1px solid var(--background);
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	background-image: url("data:image/svg+xml;utf8,<svg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M4.42999 8.512C4.49412 8.43717 4.57236 8.37572 4.66025 8.33115C4.74814 8.28658 4.84395 8.25977 4.94221 8.25225C5.04046 8.24473 5.13924 8.25664 5.23289 8.28731C5.32654 8.31798 5.41322 8.36681 5.48799 8.431L12 14.012L18.512 8.431C18.6638 8.30912 18.8571 8.25107 19.0509 8.2691C19.2448 8.28713 19.424 8.37984 19.5508 8.52762C19.6775 8.6754 19.7418 8.86668 19.7301 9.06101C19.7184 9.25535 19.6316 9.43751 19.488 9.569L12.488 15.569C12.3521 15.6855 12.179 15.7495 12 15.7495C11.821 15.7495 11.6479 15.6855 11.512 15.569L4.51199 9.569C4.36118 9.43951 4.26793 9.25545 4.25274 9.05726C4.23756 8.85907 4.30167 8.66295 4.43099 8.512H4.42999Z' fill='black'/></svg>");
+	background-image: url('./assets/solar_alt-arrow-down-outline.svg');
 	background-repeat: no-repeat;
 	background-position-x: 90%;
 	background-position-y: 50%;
-    padding-right: 30px;
+	padding-right: 30px !important;
 }
 
 select:focus {
-    outline-color: var(--accent);
+	outline-color: var(--accent);
 }
 
 body {
@@ -40,7 +36,6 @@ body {
 	background-color: var(--background);
 	padding: 2rem;
 }
-
 
 .container-table {
 	background-color: var(--primary);
@@ -58,31 +53,139 @@ body {
 
 .container-table .filters,
 .container-table table {
-	padding: 30px;
+	padding: 30px 30px 30px 30px;
 }
 
+.container-table table {
+	padding: 15px 30px 30px 30px;
+}
+
+.component {
+	min-height: 35px;
+	border-radius: 8px;
+	padding: 8px;
+	border: 1px solid var(--background);
+}
+
+.filter {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--text-primary);
+	fill: var(--text-second) !important;
+	background-color: var(--primary);
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.component:hover {
+	filter: brightness(90%);
+}
+
+.wrapper-table {
+	width: 100%;
+	overflow-x: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--text-second) transparent;
+}
+
+.wrapper-table::-webkit-scrollbar {
+	height: 16px !important;
+}
+
+.wrapper-table::-webkit-scrollbar-track {
+	background: transparent;
+}
+.wrapper-table::-webkit-scrollbar-thumb {
+	width: 4px;
+	background-color: var(--text-second);
+	border: 4px solid var(--primary);
+	border-radius: 999px;
+}
 
 table {
-    width: 100%;
-    border-spacing: 0;
-    border-radius: 16px;
-
+	width: 100%;
+	border-spacing: 0;
+	border-radius: 16px;
+	border-collapse: separate;
+	border-spacing: 0em 1em;
 }
-thead tr{
-    background-color: var(--second);
-    text-transform: uppercase;
-    font-size: 12px;
-    border-radius: 16px;
-    color: var(--text-second);
+thead tr {
+	background-color: var(--second);
+	font-size: 12px;
+	border-radius: 16px;
+	color: var(--text-second);
 }
 
 thead th {
-    padding: 16px 8px;
+	padding: 16px 8px;
 }
 
 thead th:first-child {
-     border-radius: 16px 0 0 16px ;
+	border-radius: 16px 0 0 16px;
 }
 thead th:last-child {
-     border-radius: 0 16px 16px 0 ;
+	border-radius: 0 16px 16px 0;
+}
+thead button {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	color: currentColor;
+	font-size: inherit;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: transparent;
+}
+thead button img {
+	width: 16px;
+	height: 16px;
+}
+
+tbody .perfil {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+tbody .perfil img {
+	width: 35px;
+	aspect-ratio: 1;
+	border-radius: 999px;
+}
+tbody th:not(:first-child) {
+	padding: 8px;
+	text-align: left;
+	color: var(--text-primary);
+	font-weight: 700;
+	font-size: 14px;
+}
+tbody th:nth-child(2) {
+	min-width: 180px;
+}
+
+@media screen and (max-width: 768px) {
+	.perfil span {
+		width: 120px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+@media screen and (max-width: 481px) {
+	body {
+		padding: 1.25rem;
+	}
+
+	.container-table .filters,
+	.container-table table {
+		padding: 20px 20px 20px 20px;
+	}
+
+	.container-table table {
+		padding: 10px 20px 20px 20px;
+	}
 }
